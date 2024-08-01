@@ -1,12 +1,15 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
+import CategoryFilter from '../components/CategoryFilter.vue';
 
 /**
  * Reactive reference to store the list of products.
  * @type {import('vue')}
  */
 const products = ref([]);
+
+const currentCategory = ref('');
 
 
 /**
@@ -16,9 +19,12 @@ const products = ref([]);
  * @function
  * @throws {Error} Throws an error if the network response is not ok.
  */
-const fetchData = async () => {
+const fetchData = async (category = '') => {
+    const url = category
+          ? `https://fakestoreapi.com/products/category/${category}`
+          : 'https://fakestoreapi.com/products';
   try {
-    const response = await fetch('https://fakestoreapi.com/products');
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -28,6 +34,16 @@ const fetchData = async () => {
     products.value = [];
   }
 };
+
+/**
+ * Handles changes in the category selection.
+ * Updates the currentCategory reference and fetches the filtered product data.
+ * @param {string} category - The selected category.
+ */
+function handleCategoryChange(category) {
+      currentCategory.value = category;
+      fetchData(category);
+  }
 
 /**
  * Lifecycle hook that is called when the component is mounted.
@@ -42,6 +58,7 @@ onMounted(() => {
 
 <template>
     <div>
+        <CategoryFilter @categoryChange="handleCategoryChange" />
 
         <div v-if="products.length" class="product-list">
             <div v-for="product in products" :key="product.id" class="product-card">
