@@ -61,19 +61,22 @@ onMounted(() => {
         <CategoryFilter @categoryChange="handleCategoryChange" />
 
         <div v-if="products.length" class="product-list">
+   
+            <router-link to="/product/:id">
             <div v-for="product in products" :key="product.id" class="product-card">
                 <img :src="product.image" :alt="product.title" class="product-image">
                 <h2 class="product-title">{{ product.title }}</h2>
                 <p class="product-price">${{ product.price.toFixed(2) }}</p>
                 <p class="product-category">{{ product.category }}</p>
             </div>
+            </router-link>
         </div>
         <p v-else>Loading...</p>
     </div>
 
 </template>
 
-<style>
+<style scoped>
  .product-list{
      display: flex;
      flex-wrap: wrap;
@@ -82,7 +85,6 @@ onMounted(() => {
     }
 
   .product-card{
-     display: flex;
      border: 1px solid black;
      border-radius: 10px;
      width: 350px;

@@ -11,7 +11,7 @@
 </nav>
 </template>
 
-<style>
+<style scoped>
 
 .container{
     background-color: #2b3843;

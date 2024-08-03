@@ -60,7 +60,7 @@ function handleChange(event) {
    </span>
 </template>
 
-<style>
+<style scoped>
 
 .category-filter{
     height: 40px;
