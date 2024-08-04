@@ -2,6 +2,8 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 
+
+const route = useRoute();
 const product = ref(null);
 const loading = ref(true);
 const error = ref(null);
@@ -9,8 +11,8 @@ const error = ref(null);
 
 
 onMounted(async () => {
-      const route = useRoute();
-      const id = 5; 
+    ``
+      const id = route.params.id; 
 
       try {
           const response = await fetch(`https://fakestoreapi.com/products/${id}`);

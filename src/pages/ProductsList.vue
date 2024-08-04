@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-
+import Sorting from '../components/Sorting.vue';
 import CategoryFilter from '../components/CategoryFilter.vue';
 
 /**
@@ -8,9 +8,11 @@ import CategoryFilter from '../components/CategoryFilter.vue';
  * @type {import('vue')}
  */
 const products = ref([]);
+const filteredProducts = ref([]);
+
 
 const currentCategory = ref('');
-
+const sortOption = ref('');
 
 /**
  * Fetches data from the Fake Store API and updates the `products` reference.
@@ -29,22 +31,50 @@ const fetchData = async (category = '') => {
       throw new Error('Network response was not ok');
     }
     products.value = await response.json();
+    applyFilters();
   } catch (err) {
     console.error(err);
     products.value = [];
   }
 };
 
+
+function applyFilters() {
+      const filtered = [...products.value];
+
+      if (sortOption.value === 'asc') {
+          filtered.sort((a, b) => a.price - b.price);
+      } else if (sortOption.value === 'desc') {
+          filtered.sort((a, b) => b.price - a.price);
+      }
+
+      filteredProducts.value = filtered;
+  }
+
 /**
  * Handles changes in the category selection.
  * Updates the currentCategory reference and fetches the filtered product data.
  * @param {string} category - The selected category.
  */
+
 function handleCategoryChange(category) {
       currentCategory.value = category;
       fetchData(category);
   }
 
+  function handleSortChange(sortOption) {
+      sortOption.value = sortOption;
+      applyFilters();
+  }
+
+  /**
+   * Resets the category and sort options and fetches all products.
+   */
+  function handleReset() {
+      currentCategory.value = '';
+      sortOption.value = '';
+      fetchData(); 
+  }
 /**
  * Lifecycle hook that is called when the component is mounted.
  * Triggers the `fetchData` function to load the product data.
@@ -58,11 +88,13 @@ onMounted(() => {
 
 <template>
     <div>
+
+        <Sorting @sortChange="handleSortChange" @reset="handleReset" />
         <CategoryFilter @categoryChange="handleCategoryChange" />
 
         <div v-if="products.length" class="product-list">
    
-            <router-link to="/product/:id">
+            <router-link :to="`/product/${product.id}`" v-for="product in filteredProducts" :key="product.id">
             <div v-for="product in products" :key="product.id" class="product-card">
                 <img :src="product.image" :alt="product.title" class="product-image">
                 <h2 class="product-title">{{ product.title }}</h2>
