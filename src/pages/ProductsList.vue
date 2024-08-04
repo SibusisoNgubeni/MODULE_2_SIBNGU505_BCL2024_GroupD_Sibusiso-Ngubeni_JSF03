@@ -62,8 +62,8 @@ function handleCategoryChange(category) {
       fetchData(category);
   }
 
-  function handleSortChange(sortOption) {
-      sortOption.value = sortOption;
+  function handleSortChange(option) {
+      sortOption.value = option;
       applyFilters();
   }
 
@@ -92,10 +92,12 @@ onMounted(() => {
         <Sorting @sortChange="handleSortChange" @reset="handleReset" />
         <CategoryFilter @categoryChange="handleCategoryChange" />
 
-        <div v-if="products.length" class="product-list">
+        <div v-if="filteredProducts.length" class="product-list">
    
             <router-link :to="`/product/${product.id}`" v-for="product in filteredProducts" :key="product.id">
-            <div v-for="product in products" :key="product.id" class="product-card">
+
+            
+            <div  :key="product.id" class="product-card">
                 <img :src="product.image" :alt="product.title" class="product-image">
                 <h2 class="product-title">{{ product.title }}</h2>
                 <p class="product-price">${{ product.price.toFixed(2) }}</p>
