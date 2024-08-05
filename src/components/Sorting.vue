@@ -20,6 +20,8 @@
    
   function handleSortChange(event) {
       sortOption.value = event.target.value;
+
+      //changed sortOption.value to e.target.value
       emit('sortChange', event.target.value);
   }
 
