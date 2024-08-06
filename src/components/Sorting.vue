@@ -53,6 +53,8 @@
     border-radius: 5px;
     align-items: center; 
     justify-content: center; 
+    font-weight: bold;
+    color: #efe8e8;
   }
   .reset-btn{
         margin: 5px;
@@ -60,6 +62,8 @@
         border-radius: 5px;
         height: 30px;
         background-color: rgb(66, 75, 86);
+        font-weight: bold;
+        color: #efe8e8;
         
     }
 

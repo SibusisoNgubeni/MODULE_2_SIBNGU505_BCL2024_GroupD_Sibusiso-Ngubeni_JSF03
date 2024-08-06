@@ -77,7 +77,9 @@ function handleChange(event) {
     margin-top: 20px;
     border-radius: 5px;
     align-items: center; 
-    justify-content: center; 
+    justify-content: center;
+    font-weight: bold;
+    color: #efe8e8; 
   }
 
   @media (max-width: 1200px) {
