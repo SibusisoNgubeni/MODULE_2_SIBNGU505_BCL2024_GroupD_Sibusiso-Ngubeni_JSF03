@@ -32,28 +32,36 @@
 
 
 <template>
-<select class="sort" @change="handleSortChange">
-    <option value="">Sort by Price</option>
-    <option value="asc">Price: Low to High</option>
-    <option value="desc">Price: High to Low</option>
-</select>
-   <button class="reset-btn" @click="handleReset">Reset</button>
-
+    <div class="sort">
+       <select class="sort-select" @change="handleSortChange">
+         <option value="">Sort by Price</option>
+         <option value="asc">Price: Low to High</option>
+         <option value="desc">Price: High to Low</option>
+       </select>
+       <button class="reset-btn" @click="handleReset">Reset</button>
+    </div>
 </template>
 
 <style scoped>
-  .sort {
-    height: 40px;
-    width: 150px;
+  .sort-select {
+    height: 30px;
+    width: 200px;
     margin-left: auto; 
-    margin-right: auto; 
+    margin-right: 10px; 
     margin-top: 20px;
-    background-color: rgb(149, 239, 234);
+    background-color: rgb(66, 75, 86);
     border-radius: 5px;
-    display: flex;
     align-items: center; 
     justify-content: center; 
   }
+  .reset-btn{
+        margin: 5px;
+        margin-left: 0px;
+        border-radius: 5px;
+        height: 30px;
+        background-color: rgb(66, 75, 86);
+        
+    }
 
   
 

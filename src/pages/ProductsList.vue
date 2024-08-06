@@ -111,9 +111,10 @@ watch(() => getSortOption.value, (newSort) => {
 
 <template>
     <div>
+      
         <CategoryFilter @categoryChange="handleCategoryChange" />
         <Sorting @sortChange="handleSortChange" @reset="handleReset" />
-
+      
         <div v-if="filteredProducts.length" class="product-list">
             <router-link :to="`/product/${product.id}`" v-for="product in filteredProducts" :key="product.id" class="link">
                <div  :key="product.id" class="product-card">

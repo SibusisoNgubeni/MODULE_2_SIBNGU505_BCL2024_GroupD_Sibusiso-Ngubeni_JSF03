@@ -60,19 +60,24 @@ function handleChange(event) {
 
 <style scoped>
   .category-filter {
-    height: 40px;
-    width: 150px;
-    margin-left: 50px;
-    margin-top: 20px;
+    height: 30px;
+    width: 200px;
+    margin-left: auto;
+    margin-top: 50px;
     border-radius: 5px;
   }
 
   .selector {
-    width: 150px;
-    height: 100%;
-    margin-left: 200px;
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    margin-left: auto;
     padding: 10px;
-    background-color: rgb(149, 239, 234);
+    background-color: rgb(66, 75, 86);
+    margin-top: 20px;
+    border-radius: 5px;
+    align-items: center; 
+    justify-content: center; 
   }
 
   @media (max-width: 1200px) {
