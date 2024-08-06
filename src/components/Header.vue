@@ -18,8 +18,8 @@
     border-radius: 10px;
     padding: 5px;
     display: flex;
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space between logo and text */
+    align-items: center; 
+    justify-content: space-between; 
   }
 
   .logo {
@@ -36,7 +36,7 @@
     margin-left: 20px;
   }
 
-  /* Media Queries for Responsiveness */
+  
 
   @media (max-width: 1200px) {
     .logo {
@@ -62,21 +62,21 @@
 
   @media (max-width: 768px) {
     .container {
-      flex-direction: column; /* Stack items vertically on smaller screens */
-      align-items: center; /* Center items horizontally */
-      height: auto; /* Adjust height for better fit */
-      padding: 10px; /* Add padding for spacing */
+      flex-direction: column; 
+      align-items: center; 
+      height: auto; 
+      padding: 10px; 
     }
 
     .logo {
       height: 40px;
       width: 100px;
-      margin: 10px 0; /* Add margin for spacing */
+      margin: 10px 0; 
     }
 
     .logo-text {
       font-size: 18px;
-      margin: 0; /* Remove margin for better fit */
+      margin: 0; 
     }
   }
 </style>

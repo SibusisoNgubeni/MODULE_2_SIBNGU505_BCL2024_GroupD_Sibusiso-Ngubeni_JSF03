@@ -75,8 +75,6 @@ function handleChange(event) {
     background-color: rgb(149, 239, 234);
   }
 
-  /* Media Queries for Responsiveness */
-
   @media (max-width: 1200px) {
     .category-filter {
       width: 90%;
@@ -136,7 +134,7 @@ function handleChange(event) {
     }
 
     .selector {
-      height: auto; /* Adjust height for small screens */
+      height: auto; 
     }
   }
 </style>

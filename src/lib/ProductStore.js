@@ -1,4 +1,3 @@
-// src/composables/useProductStore.js
 import { reactive, computed, watch } from 'vue';
 
 const state = reactive({

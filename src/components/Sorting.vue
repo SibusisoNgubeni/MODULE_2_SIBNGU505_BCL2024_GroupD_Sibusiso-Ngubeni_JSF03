@@ -45,21 +45,21 @@
   .sort {
     height: 40px;
     width: 150px;
-    margin-left: auto; /* Centering element horizontally */
-    margin-right: auto; /* Centering element horizontally */
+    margin-left: auto; 
+    margin-right: auto; 
     margin-top: 20px;
     background-color: rgb(149, 239, 234);
     border-radius: 5px;
     display: flex;
-    align-items: center; /* Center content vertically */
-    justify-content: center; /* Center content horizontally */
+    align-items: center; 
+    justify-content: center; 
   }
 
-  /* Media Queries for Responsiveness */
+  
 
   @media (max-width: 1200px) {
     .sort {
-      width: 90%; /* Adjust width for medium screens */
+      width: 90%; 
       margin-left: 0;
     
     }
@@ -72,7 +72,7 @@
 
   @media (max-width: 992px) {
     .sort {
-      width: 90%; /* Adjust width for smaller screens */
+      width: 90%; 
       margin-left: 0;
     }
     .reset-btn{
@@ -84,8 +84,8 @@
 
   @media (max-width: 768px) {
     .sort {
-      width: 90%; /* Adjust width for very small screens */
-      margin-left: 5px; /* Adjust margin to fit smaller screens */
+      width: 90%; 
+      margin-left: 5px; 
       margin-right: 10px;
     }
     .reset-btn{
