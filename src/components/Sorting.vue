@@ -3,7 +3,7 @@
     /**
    * Event dispatcher for emitting events to parent components.
    */
-  const emit =  defineEmits();
+  const emit =  defineEmits(['sortChange', 'reset']);
 
     /** 
    * The currently selected sort option.
@@ -37,6 +37,62 @@
     <option value="asc">Price: Low to High</option>
     <option value="desc">Price: High to Low</option>
 </select>
-   <button @click="handleReset">Reset</button>
+   <button class="reset-btn" @click="handleReset">Reset</button>
 
 </template>
+
+<style scoped>
+  .sort {
+    height: 40px;
+    width: 150px;
+    margin-left: auto; /* Centering element horizontally */
+    margin-right: auto; /* Centering element horizontally */
+    margin-top: 20px;
+    background-color: rgb(149, 239, 234);
+    border-radius: 5px;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+  }
+
+  /* Media Queries for Responsiveness */
+
+  @media (max-width: 1200px) {
+    .sort {
+      width: 90%; /* Adjust width for medium screens */
+      margin-left: 0;
+    
+    }
+    .reset-btn{
+        margin: 5px;
+        margin-left: 0px;
+        border-radius: 5px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .sort {
+      width: 90%; /* Adjust width for smaller screens */
+      margin-left: 0;
+    }
+    .reset-btn{
+        margin: 5px;
+        margin-left: 0px;
+        border-radius: 5px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sort {
+      width: 90%; /* Adjust width for very small screens */
+      margin-left: 5px; /* Adjust margin to fit smaller screens */
+      margin-right: 10px;
+    }
+    .reset-btn{
+        margin: 5px;
+        margin-left: 0px;
+        border-radius: 5px;
+    }
+  }
+
+</style>
