@@ -12,7 +12,7 @@ import DetailedProductView from '../pages/DetailedProductView.vue';
  * @type {Array<Object>}
  * @property {string} path - The URL path for the route.
  * @property {Object} component - The Vue component to render for the route.
- * @property {boolean} [props] - Pass route params as props to the component
+ * @property {boolean} [props] - Pass route params as props to the component (optional).
  */
 const routes = [
     { path: '/', component: ProductList },

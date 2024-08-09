@@ -56,55 +56,53 @@
     font-weight: bold;
     color: #efe8e8;
   }
+
   .reset-btn{
-        margin: 5px;
-        margin-left: 0px;
-        border-radius: 5px;
-        height: 30px;
-        background-color: rgb(66, 75, 86);
-        font-weight: bold;
-        color: #efe8e8;
+    margin: 5px;
+    margin-left: 0px;
+    border-radius: 5px;
+    height: 30px;
+    background-color: rgb(66, 75, 86);
+    font-weight: bold;
+    color: #efe8e8;
         
     }
 
-  
-
   @media (max-width: 1200px) {
-    .sort {
-      width: 90%; 
-      margin-left: 0;
+  .sort {
+    width: 90%; 
+    margin-left: 0;
     
     }
-    .reset-btn{
-        margin: 5px;
-        margin-left: 0px;
-        border-radius: 5px;
+  .reset-btn{
+    margin: 5px;
+    margin-left: 0px;
+    border-radius: 5px;
     }
   }
 
   @media (max-width: 992px) {
-    .sort {
-      width: 90%; 
-      margin-left: 0;
+   .sort {
+    width: 90%; 
+    margin-left: 0;
     }
-    .reset-btn{
-        margin: 5px;
-        margin-left: 0px;
-        border-radius: 5px;
+   .reset-btn{
+    margin: 5px;
+    margin-left: 0px;
+    border-radius: 5px;
     }
   }
 
   @media (max-width: 768px) {
-    .sort {
-      width: 90%; 
-      margin-left: 5px; 
-      margin-right: 10px;
+   .sort {
+    width: 90%; 
+    margin-left: 5px; 
+    margin-right: 10px;
     }
-    .reset-btn{
-        margin: 5px;
-        margin-left: 0px;
-        border-radius: 5px;
+   .reset-btn{
+    margin: 5px;
+    margin-left: 0px;
+    border-radius: 5px;
     }
   }
-
 </style>
